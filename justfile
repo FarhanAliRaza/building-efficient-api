@@ -78,12 +78,15 @@ populate:
 
 # Run pytest tests
 test *ARGS='':
-  docker exec -it django uv run pytest
-  docker exec -it django-rapid uv run pytest
-  docker exec -it djangorestframework uv run pytest
-  docker exec -it djrest2 uv run pytest
-  docker exec -it django-bolt uv run pytest
-  cd load-testing && uv run pytest {{ ARGS }}
+  docker exec -it django uv run pytest -q
+  docker exec -it django-bolt uv run pytest -q
+  docker exec -it django-ninja uv run pytest -q
+  docker exec -it django-rapid uv run pytest -q
+  docker exec -it django-shinobi uv run pytest -q
+  docker exec -it djangorestframework uv run pytest -q
+  docker exec -it djrest2 uv run pytest -q
+  docker exec -it fastapi uv run pytest -q
+  cd load-testing && uv run pytest -q {{ ARGS }}
 
 # Run benchmarks
 benchmark:
