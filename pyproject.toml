@@ -1,3 +1,11 @@
+[project]
+name = "django-api-frameworks"
+version = "0.3.0"
+description = "Benchmarks, load tests, and example code for Django REST API frameworks."
+authors = [
+    { name = "Adam Hill" }
+]
+
 [tool.ruff]
 src = ["src"]
 exclude = []
