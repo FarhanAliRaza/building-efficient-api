@@ -1,10 +1,8 @@
-# API framework serialization performance
-
-> This is a fork of https://github.com/oscarychen/building-efficient-api which adds additional Django API frameworks for comparison.
+# Django API frameworks
 
 ## Introduction
 
-This project is to compare the performance of serialization between different API frameworks. 
+This compares the performance of serving a basic JSON response using different API libraries and approaches with the Django web framework.
 
 ### Frameworks
 
@@ -15,13 +13,13 @@ This project is to compare the performance of serialization between different AP
 - [Django Rapid](https://github.com/FarhanAliRaza/django-rapid)
 - [Django Bolt](https://github.com/FarhanAliRaza/django-bolt)
 - [Djrest2](https://gitlab.levitnet.be/levit/djrest)
-- [FastAPI](https://fastapi.tiangolo.com/) (not included in benchmarks by default)
+- [FastAPI](https://fastapi.tiangolo.com/) (for comparison)
 
 ## Methodology
 
 Each API framework is in its own Docker container, along with a shared PostgreSQL database which is used to store the sample data.
 
-A Locust API load testing tool is also included to run the tests. To ensure similar resource is available to each docker container during the tests, each Locust test is run sequentially, so when one framework is handling a request, the others are idle.
+A `locust` load test is also included. To ensure similar resource is available to each docker container during the tests, each `locust` test is run sequentially, so when one framework is handling a request, the others are idle.
 
 ## Quick Start
 
@@ -50,3 +48,7 @@ just benchmark
 ### Load Testing
 
 Go to http://localhost:8089 to use `locust` for load testing.
+
+## Inspiration
+
+- fork of https://github.com/oscarychen/building-efficient-api

@@ -1,4 +1,5 @@
 from rapid import APIView, validate
+
 from car.models import Car
 from car.schemas import ResultsSchema
 

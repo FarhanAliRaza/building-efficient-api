@@ -86,6 +86,9 @@ test *ARGS='':
   docker exec -it djangorestframework uv run pytest -q
   docker exec -it djrest2 uv run pytest -q
   docker exec -it fastapi uv run pytest -q
+  just validate {{ ARGS }}
+
+validate *ARGS='':
   cd load-testing && uv run pytest -q {{ ARGS }}
 
 # Run benchmarks
