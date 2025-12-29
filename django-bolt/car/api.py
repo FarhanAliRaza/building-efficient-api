@@ -27,7 +27,7 @@ async def cars():
 
 
 @api.get("/cars-serialized")
-async def cars_serialized() -> dict[str, list[dict[str, Any]]]:
+async def cars_serialized():
     cars = []
 
     async for car in Car.objects.with_annotations():
@@ -37,7 +37,7 @@ async def cars_serialized() -> dict[str, list[dict[str, Any]]]:
 
 
 @api.get("/cars-dicts")
-async def cars_as_dicts() -> dict[str, list[dict[str, Any]]]:
+async def cars_as_dicts():
     cars = []
 
     async for car_dict in Car.objects.as_dicts().aiterator():
